@@ -26,9 +26,9 @@ animations = [ {
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "walkRight",
+"name": "walkUp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 7 ) ],
@@ -36,9 +36,9 @@ animations = [ {
 "name": "walkLeft",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "walkUp",
+"name": "walkRight",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ],
@@ -59,7 +59,11 @@ speed = 200
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "stand"
 playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
