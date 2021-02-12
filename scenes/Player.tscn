@@ -21,30 +21,30 @@ height = 6.16158
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walkUp",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "walkUp",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "walkLeft",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walkRight",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walkDown",
-"speed": 5.0
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walkLeft",
+"speed": 6.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -61,7 +61,8 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-animation = "stand"
+animation = "walkDown"
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
