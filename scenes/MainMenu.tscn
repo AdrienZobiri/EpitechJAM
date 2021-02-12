@@ -1,18 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/ChiKareGo2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/chikarego.tres" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Menu/MainMenu.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://assets/ChiKareGo2.ttf"
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 70
-font_data = SubResource( 2 )
+font_data = ExtResource( 1 )
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -72,7 +69,7 @@ margin_bottom = 67.0
 margin_right = 53.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 53, 0 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "> "
@@ -82,7 +79,7 @@ margin_left = 57.0
 margin_right = 272.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 215, 0 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "Start"
@@ -100,7 +97,7 @@ margin_bottom = 67.0
 margin_right = 53.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 53, 0 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "> "
@@ -109,7 +106,7 @@ text = "> "
 margin_left = 57.0
 margin_right = 272.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "Options"
@@ -127,7 +124,7 @@ margin_bottom = 67.0
 margin_right = 53.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 53, 0 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "> "
@@ -137,7 +134,7 @@ margin_left = 57.0
 margin_right = 272.0
 margin_bottom = 67.0
 rect_min_size = Vector2( 215, 0 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 text = "Exit"
