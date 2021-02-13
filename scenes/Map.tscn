@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/tileset/void.png" type="Texture" id=2]
 [ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=4]
@@ -10,15 +10,18 @@
 extents = Vector2( 752, 56 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.2, 3.2 )
+extents = Vector2( 44.8, 64 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.4, 9.60001 )
+extents = Vector2( 19.2, 3.2 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 3.20001, 11.2 )
+extents = Vector2( 6.4, 9.60001 )
 
 [sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3.20001, 11.2 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 19.2, 32 )
 
 [node name="room" type="Node2D"]
@@ -90,19 +93,24 @@ position = Vector2( -168.606, 626.983 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="floor2" type="TileMap" parent="."]
-format = 1
+[node name="floor" type="StaticBody2D" parent="."]
 
-[node name="large_floor" type="Sprite" parent="floor2"]
+[node name="large_floor" type="Sprite" parent="floor"]
 position = Vector2( 527.394, 626.983 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 
-[node name="void" type="Sprite" parent="floor2"]
+[node name="void" type="Sprite" parent="floor"]
 visible = false
-position = Vector2( 288, 480 )
-scale = Vector2( 14, 2 )
+position = Vector2( 335.394, 818.983 )
+scale = Vector2( 28, 4 )
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2( 335.394, 818.983 )
+scale = Vector2( 10, 1 )
+shape = SubResource( 2 )
+disabled = true
 
 [node name="wall_inside" type="StaticBody2D" parent="."]
 
@@ -174,40 +182,40 @@ texture = ExtResource( 5 )
 [node name="CollisionShape_sw1" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 79.394, 914.983 )
 scale = Vector2( 10, 10 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape_sw2" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 239.394, 994.983 )
 scale = Vector2( 5, 5 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape_sw3" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 239.394, 1218.98 )
 scale = Vector2( 5, 5 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape_se3" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 815.394, 1218.98 )
 scale = Vector2( 5, 5 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape_se1" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 975.394, 786.983 )
 scale = Vector2( 10, 10 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape_se2" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 815.394, 930.983 )
 scale = Vector2( 10, 10 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape_ne1" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 975.394, 466.983 )
 scale = Vector2( 10, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape_ne2" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 815.394, 146.983 )
 rotation = 1.5708
 scale = Vector2( 8.5, 1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )

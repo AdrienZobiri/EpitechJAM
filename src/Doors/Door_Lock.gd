@@ -3,7 +3,7 @@ extends StaticBody2D
 var door_lock_text = preload("res://assets/tileset/red_doors.png")
 var door_unlock_text = preload("res://assets/tileset/open_door.png")
 onready var door1_sprite = get_node("Sprite")
-onready var button = get_node("../Button")
+onready var button = get_node("../../../Buttons/Button")
 
 func _process(delta):
 	if !button.is_button_active:

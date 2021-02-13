@@ -8,12 +8,6 @@
 [ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=6]
 [ext_resource path="res://src/Buttons/Button.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.34298, 13.948 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.4628, 14.0645 )
-
 [sub_resource type="CircleShape2D" id=3]
 radius = 46.0145
 
@@ -21,14 +15,52 @@ radius = 46.0145
 radius = 7.66938
 height = 3.87718
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.34298, 13.948 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.4628, 14.0645 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
 position = Vector2( 224, 120 )
 
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button" type="Sprite" parent="Buttons"]
+position = Vector2( 207.151, 1228.32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="Buttons/Button" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Buttons/Button"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Buttons/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/HitBox"]
+position = Vector2( 0, -0.430702 )
+shape = SubResource( 4 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 645.341, 1218.76 )
+position = Vector2( 720, 1224 )
 
 [node name="Doors" type="Node" parent="."]
 
@@ -57,35 +89,5 @@ shape = SubResource( 1 )
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
 position = Vector2( 0, -2.02428 )
 shape = SubResource( 2 )
-
-[node name="Button" type="Sprite" parent="Doors/Sw_Room"]
-position = Vector2( 207.151, 1228.32 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
-script = ExtResource( 7 )
-
-[node name="Area2D" type="Area2D" parent="Doors/Sw_Room/Button" groups=[
-"Buttons",
-]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Sw_Room/Button/Area2D"]
-shape = SubResource( 3 )
-
-[node name="Label" type="Label" parent="Doors/Sw_Room/Button"]
-visible = false
-margin_left = -60.5203
-margin_top = -33.2321
-margin_right = 60.4797
-margin_bottom = -19.2321
-text = "Press E to  activate"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HitBox" type="StaticBody2D" parent="Doors/Sw_Room/Button"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Sw_Room/Button/HitBox"]
-position = Vector2( 0, -0.430702 )
-shape = SubResource( 4 )
-[connection signal="area_entered" from="Doors/Sw_Room/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Doors/Sw_Room/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
