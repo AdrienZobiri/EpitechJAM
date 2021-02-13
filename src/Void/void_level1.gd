@@ -1,6 +1,6 @@
 extends Sprite
 
-onready var button = get_node("/root/Node2D/Buttons/Se_Room/Button")
+onready var button = get_node("/root/Level1/Buttons/Se_Room/Button")
 
 func _process(delta):
 	if button.is_button_active:

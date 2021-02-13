@@ -11,38 +11,38 @@
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 96, 75 )
+region = Rect2( 96, 225, 96, 75 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 75, 96, 75 )
+region = Rect2( 0, 0, 96, 75 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 150, 96, 75 )
+region = Rect2( 0, 75, 96, 75 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 225, 96, 75 )
+region = Rect2( 0, 150, 96, 75 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 96, 225, 96, 75 )
+region = Rect2( 0, 225, 96, 75 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "dance",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "move",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "dance",
 "speed": 5.0
 } ]
 
@@ -76,7 +76,6 @@ position = Vector2( 0, 3.8147e-06 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 6 )
 animation = "dance"
-frame = 3
 playing = true
 __meta__ = {
 "_editor_description_": ""
@@ -95,7 +94,6 @@ __meta__ = {
 scale = Vector2( 2, 2 )
 frames = SubResource( 8 )
 animation = "right"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

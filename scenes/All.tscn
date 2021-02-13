@@ -24,7 +24,7 @@ height = 3.87718
 extents = Vector2( 14.8553, 15.9854 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 14.6353, 15.964 )
+extents = Vector2( 16.8829, 15.964 )
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 25.9838
@@ -32,7 +32,7 @@ radius = 25.9838
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 56.2373, 128.698 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
