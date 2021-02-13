@@ -8,24 +8,24 @@
 [ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=6]
 [ext_resource path="res://src/Buttons/Button.gd" type="Script" id=7]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 46.0145
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 7.66938
 height = 3.87718
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.34298, 13.948 )
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10.2849, 15.9854 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.4628, 14.0645 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12.2357, 15.964 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224, 120 )
+position = Vector2( 224.25, 119.75 )
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -40,7 +40,7 @@ script = ExtResource( 7 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="Buttons/Button"]
 visible = false
@@ -57,7 +57,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/HitBox"]
 position = Vector2( 0, -0.430702 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 720, 1224 )
@@ -67,27 +67,25 @@ position = Vector2( 720, 1224 )
 [node name="Sw_Room" type="Node" parent="Doors"]
 
 [node name="Door" type="StaticBody2D" parent="Doors/Sw_Room"]
-position = Vector2( 463.164, 1227.14 )
+position = Vector2( 507, 1226.25 )
 rotation = -1.5708
 scale = Vector2( 2, 2 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Doors/Sw_Room/Door"]
+position = Vector2( -0.249878, -21.625 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( -23.7966, -1.93459 )
-shape = SubResource( 1 )
+position = Vector2( 21.4622, -21.6184 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( 23.7741, -1.84258 )
-shape = SubResource( 1 )
+position = Vector2( -23.534, -21.6251 )
+shape = SubResource( 3 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( 0, -2.02428 )
-shape = SubResource( 2 )
+position = Vector2( -1.06665, -21.6055 )
+shape = SubResource( 4 )
 [connection signal="area_entered" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
