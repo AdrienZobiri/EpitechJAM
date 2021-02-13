@@ -24,6 +24,7 @@ config/icon="res://assets/icons/icon.png"
 [autoload]
 
 SoundMusic="*res://scenes/sound/SoundMusic.tscn"
+Main="*res://src/Main/Main.gd"
 
 [display]
 

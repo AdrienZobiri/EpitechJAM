@@ -13,6 +13,7 @@ onready var rayCast = get_node("RayCast2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Main.set("player", self)
 	pos = position
 	screen_size = get_viewport_rect().size
 	$".".global_position = Vector2(pos.x, pos.y)
