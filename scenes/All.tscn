@@ -1,12 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Main/Main.gd" type="Script" id=3]
 [ext_resource path="res://assets/tileset/red_doors.png" type="Texture" id=4]
-[ext_resource path="res://src/Doors/Door_Lock.gd" type="Script" id=5]
+[ext_resource path="res://src/Doors/Door_Level1_SeRoom.gd" type="Script" id=5]
 [ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=6]
 [ext_resource path="res://src/Buttons/Button.gd" type="Script" id=7]
+[ext_resource path="res://src/Doors/Door_Level1_SwRoom.gd" type="Script" id=8]
+[ext_resource path="res://src/Doors/Door_Level1_NeRoom.gd" type="Script" id=9]
+[ext_resource path="res://src/Doors/Door_Level1_ExitRoom.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 46.0145
@@ -16,10 +19,16 @@ radius = 7.66938
 height = 3.87718
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 12.0011, 15.9854 )
+extents = Vector2( 14.8553, 15.9854 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.6396, 15.964 )
+extents = Vector2( 14.6353, 15.964 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 25.9838
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 56.2373, 128.698 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -29,20 +38,27 @@ position = Vector2( 224.25, 119.75 )
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="Button" type="Sprite" parent="Buttons"]
+[node name="Sw_Room" type="Node" parent="Buttons"]
+
+[node name="Button" type="Sprite" parent="Buttons/Sw_Room" groups=[
+"Buttons",
+]]
 position = Vector2( 207.151, 1228.32 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Area2D" type="Area2D" parent="Buttons/Button" groups=[
+[node name="Area2D" type="Area2D" parent="Buttons/Sw_Room/Button" groups=[
 "Buttons",
 ]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Sw_Room/Button/Area2D"]
 shape = SubResource( 1 )
 
-[node name="Label" type="Label" parent="Buttons/Button"]
+[node name="Label" type="Label" parent="Buttons/Sw_Room/Button"]
 visible = false
 margin_left = -60.5203
 margin_top = -33.2321
@@ -53,10 +69,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HitBox" type="StaticBody2D" parent="Buttons/Button"]
+[node name="HitBox" type="StaticBody2D" parent="Buttons/Sw_Room/Button"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button/HitBox"]
-position = Vector2( 0, -0.430702 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Sw_Room/Button/HitBox"]
+position = Vector2( 0.198608, 7.51351 )
+shape = SubResource( 2 )
+
+[node name="Se_Room" type="Node" parent="Buttons"]
+
+[node name="Button" type="Sprite" parent="Buttons/Se_Room" groups=[
+"Buttons",
+]]
+position = Vector2( 1294.09, 1037.87 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Buttons/Se_Room/Button" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Se_Room/Button/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Buttons/Se_Room/Button"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Buttons/Se_Room/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Se_Room/Button/HitBox"]
+position = Vector2( 0.198608, 7.31496 )
+shape = SubResource( 2 )
+
+[node name="Ne_Room" type="Node" parent="Buttons"]
+
+[node name="Button" type="Sprite" parent="Buttons/Ne_Room" groups=[
+"Buttons",
+]]
+position = Vector2( 1231.85, 204.65 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Buttons/Ne_Room/Button" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Ne_Room/Button/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Buttons/Ne_Room/Button"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Buttons/Ne_Room/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Ne_Room/Button/HitBox"]
+position = Vector2( 0, 6.52052 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -70,22 +160,149 @@ position = Vector2( 720, 1224 )
 position = Vector2( 507, 1226.25 )
 rotation = -1.5708
 scale = Vector2( 2, 2 )
-script = ExtResource( 5 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Doors/Sw_Room/Door"]
 position = Vector2( -0.249878, -21.625 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( 19.6618, -21.7298 )
+position = Vector2( -30.31, -21.8425 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( -27.3344, -21.5792 )
+position = Vector2( 22.3549, -21.5618 )
 shape = SubResource( 3 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Sw_Room/Door"]
-position = Vector2( -4.04852, -21.6055 )
+position = Vector2( -7.07947, -21.9322 )
 shape = SubResource( 4 )
-[connection signal="area_entered" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
-[connection signal="area_exited" from="Buttons/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
+
+[node name="Label" type="Label" parent="Doors/Sw_Room"]
+visible = false
+margin_left = 187.764
+margin_top = 1082.72
+margin_right = 349.764
+margin_bottom = 1113.72
+text = "You are blocked !
+Press 'Ctrl + Z' to rollback"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Se_Room" type="Node" parent="Doors"]
+
+[node name="Door" type="StaticBody2D" parent="Doors/Se_Room"]
+position = Vector2( 1039.42, 1227.12 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Doors/Se_Room/Door"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Se_Room/Door"]
+position = Vector2( -23.7966, -1.93459 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Se_Room/Door"]
+position = Vector2( 23.7741, -1.84258 )
+shape = SubResource( 3 )
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Doors/Se_Room/Door"]
+position = Vector2( 0, -2.02428 )
+shape = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Doors/Se_Room"]
+visible = false
+margin_left = 305.146
+margin_top = 888.29
+margin_right = 488.146
+margin_bottom = 946.29
+text = "When you are totally blocked, you can restart the level by pressing 'R'"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ne_Room" type="Node" parent="Doors"]
+
+[node name="Door" type="StaticBody2D" parent="Doors/Ne_Room"]
+position = Vector2( 1039.52, 491.009 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Doors/Ne_Room/Door"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Ne_Room/Door"]
+position = Vector2( -23.7966, -1.93459 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Ne_Room/Door"]
+position = Vector2( 23.7741, -1.84258 )
+shape = SubResource( 3 )
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Doors/Ne_Room/Door"]
+position = Vector2( 0, -2.02428 )
+shape = SubResource( 4 )
+
+[node name="Exit_Room" type="Node" parent="Doors"]
+
+[node name="Door" type="StaticBody2D" parent="Doors/Exit_Room"]
+position = Vector2( 63.353, 359.321 )
+rotation = -1.5708
+scale = Vector2( 4, 4 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Doors/Exit_Room/Door"]
+texture = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="Doors/Exit_Room/Door" groups=[
+"ExitDoor",
+]]
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Doors/Exit_Room/Door/Area2D"]
+position = Vector2( -0.349167, 12.6408 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Exit_Room/Door"]
+position = Vector2( 0.0110397, -1.85606 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+shape = SubResource( 6 )
+
+[node name="Label" type="Label" parent="Doors/Exit_Room"]
+visible = false
+margin_left = 26.6491
+margin_top = 246.589
+margin_right = 199.649
+margin_bottom = 277.589
+text = "Press E to  activate"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="Buttons/Sw_Room/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Buttons/Sw_Room/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Buttons/Se_Room/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Buttons/Se_Room/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Buttons/Ne_Room/Button/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Buttons/Ne_Room/Button/Area2D" to="Player" method="_on_Area2D_area_exited"]
+[connection signal="area_entered" from="Doors/Exit_Room/Door/Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Doors/Exit_Room/Door/Area2D" to="Player" method="_on_Area2D_area_exited"]
