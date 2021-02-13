@@ -19,6 +19,10 @@ config/name="EpitechJAM"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SoundMusic="*res://scenes/sound/SoundMusic.tscn"
+
 [display]
 
 window/size/width=1920
