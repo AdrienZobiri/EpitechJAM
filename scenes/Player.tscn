@@ -26,16 +26,6 @@ animations = [ {
 "name": "walkUp",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walkRight",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walkDown",
@@ -45,10 +35,20 @@ animations = [ {
 "loop": true,
 "name": "walkLeft",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walkRight",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( -0.280624, -0.0556812 )
+position = Vector2( 259.288, 78.3445 )
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
@@ -62,7 +62,6 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "walkDown"
-frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

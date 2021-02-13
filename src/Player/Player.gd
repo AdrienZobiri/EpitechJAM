@@ -3,17 +3,17 @@ extends KinematicBody2D
 export var speed = 400
 var screen_size
 signal hit
+var pos
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pos = position
 	screen_size = get_viewport_rect().size
-#	hide()
-
+	$".".global_position = Vector2(pos.x, pos.y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,7 +55,11 @@ func _process(delta):
 		$AnimatedSprite.animation = "stand"
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.flip_v = false
-
+	
+	if Input.is_action_pressed("Reset"):
+		$".".global_position = Vector2(pos.x, pos.y)
+	if Input.is_action_pressed("Restart"):
+		get_tree().reload_current_scene()
 
 func _on_Player_body_entered(body):
 	hide()
