@@ -5,6 +5,8 @@ var screen_size
 signal hit
 var pos
 
+onready var rayCast = get_node("RayCast2D")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -33,7 +35,8 @@ func _process(delta):
 	else:
 		$AnimatedSprite.frame = 0
 		$AnimatedSprite.stop()
-	position += velocity * delta
+	# position += velocity * delta
+	move_and_slide(velocity)
 	
 	if velocity.x > 0:
 		$AnimatedSprite.animation = "walkRight"
@@ -65,3 +68,13 @@ func _on_Player_body_entered(body):
 	hide()
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("Buttons"):
+		area.get_parent().get_node("Label").visible = true
+		area.get_parent().in_button_range = true
+
+func _on_Area2D_area_exited(area):
+	if area.is_in_group("Buttons"):
+		area.get_parent().get_node("Label").visible = false
+		area.get_parent().in_button_range = false
