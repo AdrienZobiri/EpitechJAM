@@ -1,28 +1,28 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=1]
-[ext_resource path="res://assets/tileset/darck_wall.png" type="Texture" id=2]
+[ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=1]
+[ext_resource path="res://assets/blue.png" type="Texture" id=2]
 [ext_resource path="res://assets/tileset/large_floor.png" type="Texture" id=3]
-[ext_resource path="res://assets/tileset/void.png" type="Texture" id=4]
-[ext_resource path="res://assets/tileset/unside_wall.png" type="Texture" id=5]
-[ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=6]
-[ext_resource path="res://assets/tileset/open_door.png" type="Texture" id=7]
-[ext_resource path="res://assets/tileset/red_doors.png" type="Texture" id=8]
-[ext_resource path="res://assets/blue.png" type="Texture" id=9]
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 752, 56 )
+[ext_resource path="res://assets/tileset/darck_wall.png" type="Texture" id=4]
+[ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=5]
+[ext_resource path="res://assets/tileset/unside_wall.png" type="Texture" id=6]
+[ext_resource path="res://assets/tileset/red_doors.png" type="Texture" id=7]
+[ext_resource path="res://assets/tileset/open_door.png" type="Texture" id=8]
+[ext_resource path="res://assets/tileset/void.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.8, 32 )
+extents = Vector2( 752, 56 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.2, 192 )
+extents = Vector2( 44.8, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 128, 32 )
+extents = Vector2( 3.2, 192 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 64 )
 
 [node name="Node" type="Node"]
@@ -33,66 +33,70 @@ position = Vector2( 16, 16 )
 [node name="n_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 768, 64 )
 scale = Vector2( 40, 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="s_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 752, 1440 )
 rotation = 3.14159
 scale = Vector2( 40, 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="w_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 64, 768 )
 rotation = -1.5708
 scale = Vector2( 40, 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="e_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 1440, 768 )
 rotation = 1.5708
 scale = Vector2( 40, 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="se_side_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 1440, 1440 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="sw_side_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 64, 1440 )
 rotation = -1.5708
 scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="ne_side_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 1440, 64 )
 rotation = 1.5708
 scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="nw_side_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 64, 64 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldboarder"]
 position = Vector2( 752, 56 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="worldboarder"]
 position = Vector2( 752, 1448 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="worldboarder"]
 position = Vector2( 56, 752 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="worldboarder"]
 position = Vector2( 1448, 752 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 1 )
+
+[node name="Node" type="Node" parent="worldboarder"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="worldboarder/Node"]
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2( 16, 16 )
@@ -106,33 +110,33 @@ texture = ExtResource( 3 )
 position = Vector2( 528, 528 )
 rotation = 1.5708
 scale = Vector2( 2, 26 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 
 [node name="bot" type="Sprite" parent="floor"]
 position = Vector2( 528, 976 )
 rotation = 1.5708
 scale = Vector2( 2, 26 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 
 [node name="right" type="Sprite" parent="floor"]
 position = Vector2( 976, 752 )
 scale = Vector2( 2, 16 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 position = Vector2( 560, 528 )
 scale = Vector2( 10, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="floor"]
 position = Vector2( 560, 976 )
 scale = Vector2( 10, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="floor"]
 position = Vector2( 976, 752 )
 scale = Vector2( 10, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="wall_inside" type="StaticBody2D" parent="."]
 
@@ -140,46 +144,46 @@ shape = SubResource( 2 )
 position = Vector2( 1184, 992 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="e_side_wall2" type="Sprite" parent="wall_inside"]
 position = Vector2( 1184, 544 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="room_e_wall" type="Sprite" parent="wall_inside"]
 position = Vector2( 1312, 544 )
 rotation = -3.14159
 scale = Vector2( 6, 2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="room_e_wall2" type="Sprite" parent="wall_inside"]
 position = Vector2( 1184, 768 )
 rotation = 1.5708
 scale = Vector2( 12, 2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="room_e_wall3" type="Sprite" parent="wall_inside"]
 position = Vector2( 1312, 992 )
 scale = Vector2( 6, 2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 1280, 992 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 1280, 544 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 1184, 640 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 1184, 896 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="aSupprimerForReplace" type="StaticBody2D" parent="."]
 
@@ -187,23 +191,28 @@ shape = SubResource( 4 )
 position = Vector2( 80, 768 )
 rotation = -1.5708
 scale = Vector2( 4, 4 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="open_door" type="Sprite" parent="aSupprimerForReplace"]
 position = Vector2( 1184, 768 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="switch_off" type="Sprite" parent="aSupprimerForReplace"]
 position = Vector2( 1376, 760 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
+
+[node name="switch_off2" type="Sprite" parent="aSupprimerForReplace"]
+position = Vector2( 160, 928 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
 
 [node name="blue" type="Sprite" parent="aSupprimerForReplace"]
 position = Vector2( 760, 192 )
-texture = ExtResource( 9 )
+texture = ExtResource( 2 )
 
 [node name="blue2" type="Sprite" parent="aSupprimerForReplace"]
 position = Vector2( 928, 768 )
-texture = ExtResource( 9 )
+texture = ExtResource( 2 )
