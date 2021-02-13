@@ -1,13 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://src/Portal/Portal.gd" type="Script" id=1]
 [ext_resource path="res://assets/tileset/void.png" type="Texture" id=2]
-[ext_resource path="res://assets/red.png" type="Texture" id=3]
 [ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=4]
 [ext_resource path="res://assets/tileset/unside_wall.png" type="Texture" id=5]
 [ext_resource path="res://assets/tileset/large_floor.png" type="Texture" id=6]
 [ext_resource path="res://assets/tileset/darck_wall.png" type="Texture" id=7]
-[ext_resource path="res://assets/blue.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 752, 56 )
@@ -27,32 +24,15 @@ extents = Vector2( 3.20001, 11.2 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 19.2, 32 )
 
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 30.4661, 48.1526 )
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 30.2516, 47.5241 )
-
 [node name="room" type="Node2D"]
 position = Vector2( 224.606, 125.017 )
 
 [node name="worldboarder" type="StaticBody2D" parent="."]
+
+[node name="n_wall" type="Sprite" parent="worldboarder"]
+position = Vector2( 543.394, -61.0167 )
+scale = Vector2( 40, 4 )
+texture = ExtResource( 7 )
 
 [node name="s_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( 543.394, 1314.98 )
@@ -60,20 +40,15 @@ rotation = 3.14159
 scale = Vector2( 40, 4 )
 texture = ExtResource( 7 )
 
-[node name="n_wall" type="Sprite" parent="worldboarder"]
-position = Vector2( 543.394, -61.0167 )
+[node name="e_wall" type="Sprite" parent="worldboarder"]
+position = Vector2( 1215.39, 618.983 )
+rotation = 1.5708
 scale = Vector2( 40, 4 )
 texture = ExtResource( 7 )
 
 [node name="w_wall" type="Sprite" parent="worldboarder"]
 position = Vector2( -160.606, 642.983 )
 rotation = -1.5708
-scale = Vector2( 40, 4 )
-texture = ExtResource( 7 )
-
-[node name="e_wall" type="Sprite" parent="worldboarder"]
-position = Vector2( 1215.39, 618.983 )
-rotation = 1.5708
 scale = Vector2( 40, 4 )
 texture = ExtResource( 7 )
 
@@ -244,28 +219,3 @@ position = Vector2( 815.394, 146.983 )
 rotation = 1.5708
 scale = Vector2( 8.5, 1 )
 shape = SubResource( 6 )
-
-[node name="Portal" type="Area2D" parent="."]
-position = Vector2( 69.4143, 337.855 )
-script = ExtResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal"]
-position = Vector2( -0.201477, -67.4834 )
-frames = SubResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-position = Vector2( 0.47821, -66.9687 )
-shape = SubResource( 8 )
-
-[node name="Portal2" type="Area2D" parent="."]
-position = Vector2( 990.129, 149.568 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal2"]
-position = Vector2( 1.12251, -82.0247 )
-frames = SubResource( 9 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2"]
-position = Vector2( 1.12262, -82.0246 )
-shape = SubResource( 10 )
-[connection signal="body_shape_entered" from="Portal" to="Portal" method="_on_Portal_body_shape_entered"]
-[connection signal="body_shape_entered" from="Portal2" to="Portal" method="_on_Portal2_body_shape_entered"]
