@@ -77,11 +77,18 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("ExitDoor") && area.get_parent().button.is_button_active:
 		area.get_parent().get_node("../Label").visible = true
 		area.get_parent().in_door_range = true
+	if area.is_in_group("Level3_ExitDoor"):
+		if (area.get_parent().in_door_range):
+			area.get_parent().get_node("../Label").visible = true
+		area.get_parent().in_door_range = true
 
 func _on_Area2D_area_exited(area):
 	if area.is_in_group("Buttons"):
 		area.get_parent().get_node("Label").visible = false
 		area.get_parent().in_button_range = false
 	if area.is_in_group("ExitDoor") && area.get_parent().button.is_button_active:
+		area.get_parent().get_node("../Label").visible = false
+		area.get_parent().in_door_range = false
+	if area.is_in_group("Level3_ExitDoor"):
 		area.get_parent().get_node("../Label").visible = false
 		area.get_parent().in_door_range = false

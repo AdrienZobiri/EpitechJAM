@@ -12,48 +12,48 @@
 [ext_resource path="res://assets/portals/blue_portal.png" type="Texture" id=10]
 [ext_resource path="res://src/Portal/Portal2.gd" type="Script" id=11]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 14.8553, 15.9854 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 16.8829, 15.964 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=12]
 radius = 25.9838
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 56.2373, 128.698 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=14]
 radius = 46.0145
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=15]
 radius = 7.66938
 height = 3.87718
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 157, 300 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 157, 300 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 10 )
 region = Rect2( 157, 0, 157, 300 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=17]
 radius = 35.2874
 height = 67.8496
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=18]
 radius = 39.5204
 height = 58.0684
 
@@ -83,15 +83,15 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Room/Door"]
 position = Vector2( -24.622, -21.5432 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Room/Door"]
 position = Vector2( 31.3359, -21.5618 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Room/Door"]
 position = Vector2( 0.704069, -21.3335 )
-shape = SubResource( 2 )
+shape = SubResource( 11 )
 
 [node name="Exit" type="Node" parent="Doors"]
 
@@ -113,13 +113,13 @@ texture = ExtResource( 7 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Exit/Door/Area2D"]
 position = Vector2( -0.349167, 12.6408 )
-shape = SubResource( 3 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Exit/Door"]
 position = Vector2( 0.0110321, -1.85605 )
 rotation = 1.5708
 scale = Vector2( 0.25, 0.25 )
-shape = SubResource( 4 )
+shape = SubResource( 13 )
 
 [node name="Label" type="Label" parent="Doors/Exit"]
 visible = false
@@ -154,7 +154,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Room/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 14 )
 
 [node name="Label" type="Label" parent="Buttons/Room/Button"]
 visible = false
@@ -171,7 +171,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Room/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 15 )
 
 [node name="Portals" type="Node" parent="Buttons"]
 
@@ -191,7 +191,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Portals/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 14 )
 
 [node name="Label" type="Label" parent="Buttons/Portals/Button"]
 visible = false
@@ -208,7 +208,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Portals/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 15 )
 
 [node name="Portal" type="Area2D" parent="."]
 visible = false
@@ -220,12 +220,13 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal"]
 position = Vector2( -76.0159, -15.071 )
-frames = SubResource( 9 )
+frames = SubResource( 16 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( -75.3523, -12.9686 )
-shape = SubResource( 10 )
+shape = SubResource( 17 )
 disabled = true
 
 [node name="Portal2" type="Area2D" parent="."]
@@ -238,12 +239,13 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal2"]
 position = Vector2( 88.014, -5.38873 )
-frames = SubResource( 9 )
+frames = SubResource( 16 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal2"]
 position = Vector2( 88.0142, -4.19116 )
-shape = SubResource( 11 )
+shape = SubResource( 18 )
 disabled = true
 [connection signal="body_shape_entered" from="Portal" to="Portal" method="_on_Portal_body_shape_entered"]
 [connection signal="body_shape_entered" from="Portal2" to="Portal" method="_on_Portal2_body_shape_entered"]
