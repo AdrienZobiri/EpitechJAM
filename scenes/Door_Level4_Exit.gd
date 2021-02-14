@@ -3,7 +3,6 @@ extends StaticBody2D
 var door_lock_text = preload("res://assets/tileset/big_red_doors.png")
 var door_unlock_text = preload("res://assets/tileset/green_doors.png")
 onready var door_sprite = get_node("Sprite")
-onready var button = get_node("../../../Buttons/Init/Button")
 var is_open = false
 var in_door_range = false
 

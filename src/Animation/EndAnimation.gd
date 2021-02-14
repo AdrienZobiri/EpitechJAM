@@ -11,6 +11,8 @@ const creditsScene = preload("res://Scenes/Credits.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$"/root/SoundMusic".stop()
+	$"/root/SoundWin".play()
 	screen_size = get_viewport_rect().size
 	isVisible = true
 	isDancing = false
@@ -47,8 +49,9 @@ func _process(delta):
 		timer += delta
 	elif round(timer) >= 5 && !timerGood:
 		timerGood = true
+		$"/root/SoundWin".stop()
 		$MonkiFlip.visible = true
 		$MonkiFlip.play()
 	elif timerGood && !$MonkiFlip.is_playing():
-		$"/root/SoundMusic".play()
+		$"/root/SoundWin".play()
 		get_tree().change_scene("res://scenes/Credits.tscn")

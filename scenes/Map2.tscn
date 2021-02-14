@@ -1,13 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/tileset/switch_off.png" type="Texture" id=1]
-[ext_resource path="res://assets/blue.png" type="Texture" id=2]
 [ext_resource path="res://assets/tileset/large_floor.png" type="Texture" id=3]
 [ext_resource path="res://assets/tileset/darck_wall.png" type="Texture" id=4]
 [ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=5]
 [ext_resource path="res://assets/tileset/unside_wall.png" type="Texture" id=6]
-[ext_resource path="res://assets/tileset/red_doors.png" type="Texture" id=7]
-[ext_resource path="res://assets/tileset/open_door.png" type="Texture" id=8]
 [ext_resource path="res://assets/tileset/void.png" type="Texture" id=9]
 [ext_resource path="res://src/Void/void_level2.gd" type="Script" id=10]
 
@@ -198,40 +194,3 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_inside"]
 position = Vector2( 1184, 896 )
 shape = SubResource( 6 )
-
-[node name="aSupprimerForReplace" type="StaticBody2D" parent="."]
-
-[node name="red_doors" type="Sprite" parent="aSupprimerForReplace"]
-visible = false
-position = Vector2( 80, 768 )
-rotation = -1.5708
-scale = Vector2( 4, 4 )
-texture = ExtResource( 7 )
-
-[node name="open_door" type="Sprite" parent="aSupprimerForReplace"]
-position = Vector2( 1184, 768 )
-rotation = 1.5708
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-
-[node name="switch_off" type="Sprite" parent="aSupprimerForReplace"]
-visible = false
-position = Vector2( 1376, 760 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
-
-[node name="switch_off2" type="Sprite" parent="aSupprimerForReplace"]
-visible = false
-position = Vector2( 160, 928 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
-
-[node name="blue" type="Sprite" parent="aSupprimerForReplace"]
-visible = false
-position = Vector2( 760, 192 )
-texture = ExtResource( 2 )
-
-[node name="blue2" type="Sprite" parent="aSupprimerForReplace"]
-visible = false
-position = Vector2( 928, 768 )
-texture = ExtResource( 2 )

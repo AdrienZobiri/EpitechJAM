@@ -25,6 +25,7 @@ config/icon="res://assets/icons/icon.png"
 
 SoundMusic="*res://scenes/sound/SoundMusic.tscn"
 Main="*res://src/Main/Main.gd"
+SoundWin="*res://scenes/sound/SoundWin.tscn"
 
 [display]
 
