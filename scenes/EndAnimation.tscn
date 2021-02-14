@@ -82,7 +82,7 @@ position = Vector2( 0, 3.8147e-06 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 6 )
 animation = "dance"
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_editor_description_": ""

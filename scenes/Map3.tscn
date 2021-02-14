@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/tileset/side_wall.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset/darck_wall.png" type="Texture" id=2]
@@ -12,28 +12,40 @@ extents = Vector2( 752, 56 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 64 )
 
-[sub_resource type="RectangleShape2D" id=10]
-
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 544, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 32, 512 )
+extents = Vector2( 544, 32 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 382.299, 32 )
+extents = Vector2( 32, 512 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32, 320 )
+extents = Vector2( 384.62, 40 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 288, 32 )
+extents = Vector2( 32, 320 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 32, 128 )
+extents = Vector2( 256, 40 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 32, 48 )
+extents = Vector2( 256, 32 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 32, 104 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 32, 40 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 40, 40 )
 
 [node name="Node" type="Node"]
 
@@ -125,14 +137,9 @@ position = Vector2( 512, 1344 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-shape = SubResource( 10 )
+shape = SubResource( 3 )
 
 [node name="room_wall" type="StaticBody2D" parent="."]
-
-[node name="darck_wall" type="Sprite" parent="room_wall"]
-position = Vector2( 608, 608 )
-scale = Vector2( 18, 2 )
-texture = ExtResource( 2 )
 
 [node name="darck_wall7" type="Sprite" parent="room_wall"]
 position = Vector2( 768, 288 )
@@ -140,9 +147,14 @@ scale = Vector2( 28, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall2" type="Sprite" parent="room_wall"]
-position = Vector2( 928, 608 )
+position = Vector2( 928, 699.926 )
 rotation = 1.5708
-scale = Vector2( 18, 2 )
+scale = Vector2( 12.2547, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall" type="Sprite" parent="room_wall"]
+position = Vector2( 708, 608 )
+scale = Vector2( 12.25, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall9" type="Sprite" parent="room_wall"]
@@ -151,16 +163,39 @@ rotation = 1.5708
 scale = Vector2( 28, 2 )
 texture = ExtResource( 2 )
 
-[node name="darck_wall6" type="Sprite" parent="room_wall"]
-position = Vector2( 608, 448 )
+[node name="darck_wall12" type="Sprite" parent="room_wall"]
+position = Vector2( 348, 608 )
+scale = Vector2( 2.25, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall13" type="Sprite" parent="room_wall"]
+position = Vector2( 608, 541.837 )
 rotation = 1.5708
-scale = Vector2( 8, 2 )
+scale = Vector2( 2.16551, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall20" type="Sprite" parent="room_wall"]
+position = Vector2( 608, 668.238 )
+rotation = -1.5708
+scale = Vector2( 2.26487, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall14" type="Sprite" parent="room_wall"]
+position = Vector2( 608, 351.314 )
+rotation = 1.5708
+scale = Vector2( 2.45709, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall15" type="Sprite" parent="room_wall"]
+position = Vector2( 928, 351.371 )
+rotation = 1.5708
+scale = Vector2( 2.50383, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall3" type="Sprite" parent="room_wall"]
-position = Vector2( 608, 928 )
+position = Vector2( 608, 928.647 )
 rotation = -1.5708
-scale = Vector2( 18, 2 )
+scale = Vector2( 6.18449, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall5" type="Sprite" parent="room_wall"]
@@ -170,9 +205,9 @@ scale = Vector2( 18, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall4" type="Sprite" parent="room_wall"]
-position = Vector2( 768, 928 )
+position = Vector2( 673.89, 928 )
 rotation = 3.14159
-scale = Vector2( 28, 2 )
+scale = Vector2( 22.1583, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall10" type="Sprite" parent="room_wall"]
@@ -182,15 +217,39 @@ scale = Vector2( 34, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall8" type="Sprite" parent="room_wall"]
-position = Vector2( 1088, 608 )
+position = Vector2( 993.854, 608 )
 rotation = 3.14159
-scale = Vector2( 8, 2 )
+scale = Vector2( 2.11586, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall16" type="Sprite" parent="room_wall"]
+position = Vector2( 1182.88, 608 )
+rotation = 3.14159
+scale = Vector2( 2.36159, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall17" type="Sprite" parent="room_wall"]
+position = Vector2( 1186.48, 928 )
+rotation = 3.14159
+scale = Vector2( 2.34512, 2 )
 texture = ExtResource( 2 )
 
 [node name="darck_wall11" type="Sprite" parent="room_wall"]
-position = Vector2( 928, 1088 )
+position = Vector2( 928, 995.339 )
 rotation = -1.5708
-scale = Vector2( 8, 2 )
+scale = Vector2( 2.2087, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall18" type="Sprite" parent="room_wall"]
+position = Vector2( 928, 1185.91 )
+rotation = -1.5708
+scale = Vector2( 2.38067, 2 )
+texture = ExtResource( 2 )
+
+[node name="darck_wall19" type="Sprite" parent="room_wall"]
+position = Vector2( 608, 1186.05 )
+rotation = -1.5708
+scale = Vector2( 2.37163, 2 )
 texture = ExtResource( 2 )
 
 [node name="side_wall" type="Sprite" parent="room_wall"]
@@ -218,69 +277,69 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape_long1" type="CollisionShape2D" parent="room_wall"]
 position = Vector2( 672, 1248 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape_long2" type="CollisionShape2D" parent="room_wall"]
 position = Vector2( 1248, 768 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape_long3" type="CollisionShape2D" parent="room_wall"]
 position = Vector2( 768, 288 )
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape_commun1" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 639.38, 928 )
-shape = SubResource( 5 )
+position = Vector2( 640, 936 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape_commun2" type="CollisionShape2D" parent="room_wall"]
 position = Vector2( 288, 576 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape_commun3" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 768, 608 )
-shape = SubResource( 7 )
+position = Vector2( 768, 616 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape_commun4" type="CollisionShape2D" parent="room_wall"]
 position = Vector2( 928, 768 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape_commun5" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 608, 928 )
-shape = SubResource( 8 )
+position = Vector2( 608, 936 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape_commun6" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 608, 608 )
-shape = SubResource( 8 )
+position = Vector2( 608, 616 )
+shape = SubResource( 10 )
 
 [node name="CollisionShape_short1" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 368, 608 )
+position = Vector2( 352, 616 )
 rotation = 1.5708
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape_short2" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 608, 368 )
-shape = SubResource( 9 )
+position = Vector2( 608, 360 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape_short3" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 928, 368 )
-shape = SubResource( 9 )
+position = Vector2( 928, 360 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape_short4" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 1168, 608 )
+position = Vector2( 1184, 616 )
 rotation = 1.5708
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape_short5" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 1168, 928 )
+position = Vector2( 1192, 936 )
 rotation = 1.5708
-shape = SubResource( 9 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape_short6" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 928, 1168 )
-shape = SubResource( 9 )
+position = Vector2( 928, 1184 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape_short7" type="CollisionShape2D" parent="room_wall"]
-position = Vector2( 608, 1168 )
-shape = SubResource( 9 )
+position = Vector2( 608, 1184 )
+shape = SubResource( 12 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Map3.tscn" type="PackedScene" id=2]
@@ -15,27 +15,141 @@
 [ext_resource path="res://src/Buttons/Level3_RoseButton.gd" type="Script" id=13]
 [ext_resource path="res://src/Buttons/Level3_MagentaButton.gd" type="Script" id=14]
 [ext_resource path="res://src/Buttons/Level3_RedButton.gd" type="Script" id=15]
-[ext_resource path="res://assets/tileset/big_red_doors.png" type="Texture" id=16]
-[ext_resource path="res://src/Doors/Door_Level3_Exit.gd" type="Script" id=17]
+[ext_resource path="res://src/Doors/Door_Level3_Exit.gd" type="Script" id=16]
 [ext_resource path="res://assets/tileset/Jordan.png" type="Texture" id=18]
-[ext_resource path="res://scenes/sound/Jordan.gd" type="Script" id=19]
+[ext_resource path="res://scenes/Jordan.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.8553, 15.9854 )
+extents = Vector2( 8, 15.9854 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16.8829, 15.964 )
+extents = Vector2( 16, 16 )
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 25.9838
+[sub_resource type="GDScript" id=3]
+script/source = "extends StaticBody2D
+
+var door_lock_text = preload(\"res://assets/tileset/red_doors.png\")
+var door_unlock_text = preload(\"res://assets/tileset/open_door.png\")
+onready var door_sprite = get_node(\"Sprite\")
+var is_open = false
+
+func _process(delta):
+	if is_open:
+		door_sprite.set_texture(door_unlock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(true)
+	else:
+		door_sprite.set_texture(door_lock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(false)
+"
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 20.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 20.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 8, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="GDScript" id=12]
+script/source = "extends StaticBody2D
+
+var door_lock_text = preload(\"res://assets/tileset/red_doors.png\")
+var door_unlock_text = preload(\"res://assets/tileset/open_door.png\")
+onready var door_sprite = get_node(\"Sprite\")
+var is_open = false
+
+func _process(delta):
+	if is_open:
+		door_sprite.set_texture(door_unlock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(true)
+	else:
+		door_sprite.set_texture(door_lock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(false)
+"
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 8, 20 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 8.00015, 20 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8, 20 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 8, 20 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 12.0001, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="GDScript" id=20]
+script/source = "extends StaticBody2D
+
+var door_lock_text = preload(\"res://assets/tileset/red_doors.png\")
+var door_unlock_text = preload(\"res://assets/tileset/open_door.png\")
+onready var door_sprite = get_node(\"Sprite\")
+var is_open = false
+
+func _process(delta):
+	if is_open:
+		door_sprite.set_texture(door_unlock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(true)
+	else:
+		door_sprite.set_texture(door_lock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(false)
+"
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="StreamTexture" id=25]
+flags = 4
+load_path = "res://.import/big_red_doors.png-3825cc4572c6cfbd981200b6f535de28.stex"
+
+[sub_resource type="CircleShape2D" id=26]
+radius = 25.9838
+
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 56.2373, 128.698 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=28]
 radius = 44.7795
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=29]
 radius = 7.66938
 height = 3.87718
 
@@ -44,14 +158,14 @@ height = 3.87718
 [node name="map" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 765.175, 708.072 )
+position = Vector2( 768, 704 )
 
 [node name="Doors" type="Node" parent="."]
 
 [node name="door1" type="Node" parent="Doors"]
 
 [node name="Door" type="StaticBody2D" parent="Doors/door1"]
-position = Vector2( 651.098, 768.021 )
+position = Vector2( 648, 768 )
 rotation = -1.5708
 scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
@@ -60,19 +174,19 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door1/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( 9.15527e-05, -20 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door1/Door"]
-position = Vector2( -30.31, -21.8425 )
+position = Vector2( -23.9999, -20.0001 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door1/Door"]
-position = Vector2( 22.3549, -21.5618 )
+position = Vector2( 16.0001, -19.9999 )
 shape = SubResource( 1 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door1/Door"]
-position = Vector2( -7.07947, -21.9322 )
+position = Vector2( -7.99994, -20 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Doors/door1"]
@@ -92,27 +206,27 @@ __meta__ = {
 [node name="door2" type="Node" parent="Doors"]
 
 [node name="Door" type="StaticBody2D" parent="Doors/door2"]
-position = Vector2( 444.261, 651.342 )
+position = Vector2( 440, 648 )
 scale = Vector2( 2, 2 )
-script = ExtResource( 4 )
+script = SubResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door2/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( 4, -20 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door2/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -20, -15.5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door2/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 28, -15.5 )
+shape = SubResource( 5 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door2/Door"]
-position = Vector2( -7.07947, -21.9322 )
+position = Vector2( 4, -20 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Doors/door2"]
@@ -132,7 +246,7 @@ __meta__ = {
 [node name="door3" type="Node" parent="Doors"]
 
 [node name="Door" type="StaticBody2D" parent="Doors/door3"]
-position = Vector2( 564.742, 449.403 )
+position = Vector2( 576, 472 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
@@ -141,20 +255,20 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door3/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( -12.0001, -15.9999 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door3/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -32.0001, -15.9998 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door3/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 12, -16 )
+shape = SubResource( 7 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door3/Door"]
-position = Vector2( -7.07947, -21.9322 )
-shape = SubResource( 2 )
+position = Vector2( -8.00006, -15.9999 )
+shape = SubResource( 8 )
 
 [node name="Label" type="Label" parent="Doors/door3"]
 visible = false
@@ -182,20 +296,20 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door4/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( 0.345917, -21.637 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door4/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -19.6541, -21.6369 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door4/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 24.3459, -21.6371 )
+shape = SubResource( 10 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door4/Door"]
-position = Vector2( -7.07947, -21.9322 )
-shape = SubResource( 2 )
+position = Vector2( 4.34591, -21.637 )
+shape = SubResource( 11 )
 
 [node name="Label" type="Label" parent="Doors/door4"]
 visible = false
@@ -214,28 +328,28 @@ __meta__ = {
 [node name="door5" type="Node" parent="Doors"]
 
 [node name="Door" type="StaticBody2D" parent="Doors/door5"]
-position = Vector2( 1091.17, 564.943 )
+position = Vector2( 1080, 560 )
 rotation = 3.14159
 scale = Vector2( 2, 2 )
-script = ExtResource( 4 )
+script = SubResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door5/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( -4, -24 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door5/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -27.9999, -28.0001 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door5/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 20.0001, -27.9999 )
+shape = SubResource( 14 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door5/Door"]
-position = Vector2( -7.07947, -21.9322 )
+position = Vector2( -4, -24 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Doors/door5"]
@@ -264,19 +378,19 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/door6/Door"]
-position = Vector2( -0.249878, -21.625 )
+position = Vector2( 1.12006, -21.656 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door6/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -22.8799, -25.6561 )
+shape = SubResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door6/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 25.1201, -25.6559 )
+shape = SubResource( 16 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door6/Door"]
-position = Vector2( -7.07947, -21.9322 )
+position = Vector2( 1.12005, -21.656 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="Doors/door6"]
@@ -309,16 +423,16 @@ position = Vector2( -0.249878, -21.625 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door7/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -27.1649, -21.5101 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door7/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 20.8351, -21.5099 )
+shape = SubResource( 18 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door7/Door"]
-position = Vector2( -7.07947, -21.9322 )
-shape = SubResource( 2 )
+position = Vector2( -3.16492, -21.51 )
+shape = SubResource( 19 )
 
 [node name="Label" type="Label" parent="Doors/door7"]
 visible = false
@@ -340,7 +454,7 @@ __meta__ = {
 position = Vector2( 650.998, 1088.97 )
 rotation = -1.5708
 scale = Vector2( 2, 2 )
-script = ExtResource( 4 )
+script = SubResource( 20 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -350,16 +464,16 @@ position = Vector2( -0.249878, -21.625 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/door8/Door"]
-position = Vector2( -30.31, -21.8425 )
-shape = SubResource( 1 )
+position = Vector2( -27.515, -21.4991 )
+shape = SubResource( 21 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/door8/Door"]
-position = Vector2( 22.3549, -21.5618 )
-shape = SubResource( 1 )
+position = Vector2( 20.4851, -21.4989 )
+shape = SubResource( 22 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/door8/Door"]
-position = Vector2( -7.07947, -21.9322 )
-shape = SubResource( 2 )
+position = Vector2( -3.51496, -21.499 )
+shape = SubResource( 23 )
 
 [node name="Label" type="Label" parent="Doors/door8"]
 visible = false
@@ -381,13 +495,13 @@ __meta__ = {
 position = Vector2( 79.7453, 1086.94 )
 rotation = -1.5708
 scale = Vector2( 4, 4 )
-script = ExtResource( 17 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Doors/Exit/Door"]
-texture = ExtResource( 16 )
+texture = SubResource( 25 )
 
 [node name="Area2D" type="Area2D" parent="Doors/Exit/Door" groups=[
 "Level3_ExitDoor",
@@ -395,13 +509,13 @@ texture = ExtResource( 16 )
 
 [node name="EnterCollision" type="CollisionShape2D" parent="Doors/Exit/Door/Area2D"]
 position = Vector2( -0.349167, 12.6408 )
-shape = SubResource( 3 )
+shape = SubResource( 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Exit/Door"]
 position = Vector2( 0.0110321, -1.85605 )
 rotation = 1.5708
 scale = Vector2( 0.25, 0.25 )
-shape = SubResource( 4 )
+shape = SubResource( 27 )
 
 [node name="Label" type="Label" parent="Doors/Exit"]
 visible = false
@@ -436,7 +550,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Init/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Init/Button"]
 visible = false
@@ -453,7 +567,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Init/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Blue" type="Node" parent="Buttons"]
 
@@ -473,7 +587,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Blue/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Blue/Button"]
 visible = false
@@ -490,7 +604,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Blue/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Green" type="Node" parent="Buttons"]
 
@@ -510,7 +624,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Green/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Green/Button"]
 visible = false
@@ -527,7 +641,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Green/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Cyan" type="Node" parent="Buttons"]
 
@@ -547,7 +661,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Cyan/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Cyan/Button"]
 visible = false
@@ -564,7 +678,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Cyan/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Yellow" type="Node" parent="Buttons"]
 
@@ -584,7 +698,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Yellow/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Yellow/Button"]
 visible = false
@@ -601,7 +715,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Yellow/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Orange" type="Node" parent="Buttons"]
 
@@ -621,7 +735,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Orange/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Orange/Button"]
 visible = false
@@ -638,7 +752,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Orange/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Pink" type="Node" parent="Buttons"]
 
@@ -658,7 +772,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Pink/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Pink/Button"]
 visible = false
@@ -675,7 +789,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Pink/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Magenta" type="Node" parent="Buttons"]
 
@@ -695,7 +809,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Magenta/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Magenta/Button"]
 visible = false
@@ -712,7 +826,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Magenta/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Red" type="Node" parent="Buttons"]
 
@@ -732,7 +846,7 @@ __meta__ = {
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Red/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Red/Button"]
 visible = false
@@ -749,7 +863,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Red/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Troll" type="Node" parent="Buttons"]
 
@@ -766,7 +880,7 @@ script = ExtResource( 15 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Troll/Button/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 28 )
 
 [node name="Label" type="Label" parent="Buttons/Troll/Button"]
 visible = false
@@ -783,7 +897,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Troll/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
-shape = SubResource( 6 )
+shape = SubResource( 29 )
 
 [node name="Jordan" type="Sprite" parent="."]
 visible = false

@@ -1,0 +1,769 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Door_Level4_Exit.gd" type="Script" id=2]
+[ext_resource path="res://assets/tileset/big_red_doors.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/yellow1.gd" type="Script" id=5]
+[ext_resource path="res://assets/portals/yellow_portal.png" type="Texture" id=6]
+[ext_resource path="res://assets/portals/purple_portal.png" type="Texture" id=7]
+[ext_resource path="res://src/Doors/Door_Level3.gd" type="Script" id=8]
+[ext_resource path="res://assets/portals/green_portal.png" type="Texture" id=9]
+[ext_resource path="res://assets/portals/red_portal.png" type="Texture" id=10]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/red_doors.png-113903a0dadc330d41f11a003ba9f978.stex"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends StaticBody2D
+
+var door_lock_text = preload(\"res://assets/tileset/red_doors.png\")
+var door_unlock_text = preload(\"res://assets/tileset/open_door.png\")
+onready var door_sprite = get_node(\"Sprite\")
+var is_open = false
+
+func _process(delta):
+	if is_open:
+		door_sprite.set_texture(door_unlock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(true)
+	else:
+		door_sprite.set_texture(door_lock_text)
+		if (get_node(\"EnterCollision\")):
+			get_node(\"EnterCollision\").set_disabled(false)
+"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/red_doors.png-113903a0dadc330d41f11a003ba9f978.stex"
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8, 15.9854 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 157, 300 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 157, 0, 157, 300 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 35.2874
+height = 67.8496
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=15]
+radius = 39.5204
+height = 58.0684
+
+[sub_resource type="GDScript" id=16]
+script/source = "extends Area2D
+
+func _ready():
+	pass
+
+func _on_purple1_body_shape_entered(body_id, body, body_shape, local_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"purple2\").global_position
+
+
+func _on_purple2_body_shape_entered(body_id, body, body_shape, local_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"purple1\").global_position
+"
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 157, 300 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 157, 0, 157, 300 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 35.2874
+height = 67.8496
+
+[sub_resource type="GDScript" id=21]
+script/source = "extends Area2D
+
+func _ready():
+	pass
+
+func _on_green1_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green2\").global_position
+
+
+func _on_green2_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green1\").global_position
+
+
+func _on_green3_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green2\").global_position
+"
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 157, 300 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 157, 0, 157, 300 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=25]
+radius = 35.2874
+height = 67.8496
+
+[sub_resource type="GDScript" id=26]
+script/source = "extends Area2D
+
+func _ready():
+	pass
+
+func _on_green1_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green2\").global_position
+
+
+func _on_green2_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green1\").global_position
+
+
+func _on_green3_body_shape_entered(body_id, body, body_shape, area_shape):
+	var player = Main.get(\"player\")
+	player.global_position = get_parent().get_node(\"green2\").global_position
+
+
+func _on_green6_body_shape_entered(body_id, body, body_shape, area_shape):
+	pass # Replace with function body.
+
+
+func _on_green5_body_shape_entered(body_id, body, body_shape, area_shape):
+	pass # Replace with function body.
+
+
+func _on_red1_body_shape_entered(body_id, body, body_shape, area_shape):
+	pass # Replace with function body.
+"
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 157, 300 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 157, 0, 157, 300 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=30]
+radius = 35.2874
+height = 67.8496
+
+[sub_resource type="StreamTexture" id=31]
+flags = 4
+load_path = "res://.import/switch_off.png-815de3747a62479a5805078f1b8bace7.stex"
+
+[sub_resource type="GDScript" id=32]
+script/source = "extends Sprite
+
+onready var door1 = get_node(\"../../../Doors/door1/Door\")
+onready var init_button = get_node(\"../../Init/Button\")
+
+var button_active_text = preload(\"res://assets/tileset/darkblue_led.png\")
+var button_inactive_text = preload(\"res://assets/tileset/switch_off.png\")
+var is_button_active = false
+var in_button_range = false
+
+func _physics_process(delta):
+	if is_button_active == true:
+		set_texture(button_active_text)
+		get_node(\"Label\").visible = false
+	elif in_button_range && Input.is_action_just_pressed(\"Interact\"):
+		is_button_active = true
+		door1.is_open = false
+		if init_button.iterator == 7:
+			init_button.iterator += 1
+		else:
+			init_button.visible = false
+			init_button.get_node(\"Area2D/CollisionShape2D\").set_disabled(true)
+			init_button.get_node(\"HitBox/CollisionShape2D\").set_disabled(true)
+"
+
+[sub_resource type="CircleShape2D" id=33]
+radius = 44.7795
+
+[sub_resource type="CapsuleShape2D" id=34]
+radius = 7.66938
+height = 3.87718
+
+[sub_resource type="StreamTexture" id=35]
+flags = 4
+load_path = "res://.import/switch_off.png-815de3747a62479a5805078f1b8bace7.stex"
+
+[sub_resource type="GDScript" id=36]
+script/source = "extends Sprite
+
+onready var door1 = get_node(\"../../../Doors/door1/Door\")
+onready var init_button = get_node(\"../../Init/Button\")
+
+var button_active_text = preload(\"res://assets/tileset/darkblue_led.png\")
+var button_inactive_text = preload(\"res://assets/tileset/switch_off.png\")
+var is_button_active = false
+var in_button_range = false
+
+func _physics_process(delta):
+	if is_button_active == true:
+		set_texture(button_active_text)
+		get_node(\"Label\").visible = false
+	elif in_button_range && Input.is_action_just_pressed(\"Interact\"):
+		is_button_active = true
+		door1.is_open = false
+		if init_button.iterator == 7:
+			init_button.iterator += 1
+		else:
+			init_button.visible = false
+			init_button.get_node(\"Area2D/CollisionShape2D\").set_disabled(true)
+			init_button.get_node(\"HitBox/CollisionShape2D\").set_disabled(true)
+"
+
+[sub_resource type="CircleShape2D" id=37]
+radius = 44.7795
+
+[sub_resource type="CapsuleShape2D" id=38]
+radius = 7.66938
+height = 3.87718
+
+[sub_resource type="StreamTexture" id=39]
+flags = 4
+load_path = "res://.import/switch_off.png-815de3747a62479a5805078f1b8bace7.stex"
+
+[sub_resource type="GDScript" id=40]
+script/source = "extends Sprite
+
+onready var door1 = get_node(\"../../../Doors/door1/Door\")
+onready var init_button = get_node(\"../../Init/Button\")
+
+var button_active_text = preload(\"res://assets/tileset/darkblue_led.png\")
+var button_inactive_text = preload(\"res://assets/tileset/switch_off.png\")
+var is_button_active = false
+var in_button_range = false
+
+func _physics_process(delta):
+	if is_button_active == true:
+		set_texture(button_active_text)
+		get_node(\"Label\").visible = false
+	elif in_button_range && Input.is_action_just_pressed(\"Interact\"):
+		is_button_active = true
+		door1.is_open = false
+		if init_button.iterator == 7:
+			init_button.iterator += 1
+		else:
+			init_button.visible = false
+			init_button.get_node(\"Area2D/CollisionShape2D\").set_disabled(true)
+			init_button.get_node(\"HitBox/CollisionShape2D\").set_disabled(true)
+"
+
+[sub_resource type="CircleShape2D" id=41]
+radius = 44.7795
+
+[sub_resource type="CapsuleShape2D" id=42]
+radius = 7.66938
+height = 3.87718
+
+[sub_resource type="CircleShape2D" id=43]
+radius = 25.9838
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 56.2373, 128.698 )
+
+[node name="Level4" type="Node"]
+
+[node name="map" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 768, 768 )
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_ne" type="StaticBody2D" parent="Doors"]
+position = Vector2( 1016, 320 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Doors/Door_ne"]
+position = Vector2( 9.15527e-05, -20 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door_ne"]
+position = Vector2( -20, -20 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Door_ne"]
+position = Vector2( 24, -20 )
+shape = SubResource( 3 )
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Doors/Door_ne"]
+position = Vector2( 4, -20 )
+shape = SubResource( 4 )
+
+[node name="Door_nw" type="StaticBody2D" parent="Doors"]
+position = Vector2( 288, 504 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+script = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Doors/Door_nw"]
+position = Vector2( 9.15527e-05, -20 )
+texture = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door_nw"]
+position = Vector2( -28, -20 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Doors/Door_nw"]
+position = Vector2( 24, -20 )
+shape = SubResource( 8 )
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Doors/Door_nw"]
+position = Vector2( -9.53674e-07, -20 )
+shape = SubResource( 9 )
+
+[node name="Portal" type="Node" parent="."]
+
+[node name="yellow1" type="Area2D" parent="Portal"]
+position = Vector2( 256, 288 )
+rotation = -1.5708
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/yellow1"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 12 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/yellow1"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 13 )
+
+[node name="yellow2" type="Area2D" parent="Portal"]
+position = Vector2( 1344, 416 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/yellow2"]
+position = Vector2( 216.91, -585.165 )
+frames = SubResource( 14 )
+frame = 1
+playing = true
+offset = Vector2( -120.896, 579.776 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/yellow2"]
+position = Vector2( 96, -8 )
+shape = SubResource( 15 )
+
+[node name="purple1" type="Area2D" parent="Portal"]
+position = Vector2( 576, 1152 )
+rotation = -1.5708
+script = SubResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/purple1"]
+position = Vector2( -100.016, 0.929016 )
+frames = SubResource( 19 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/purple1"]
+position = Vector2( -99.3523, 3.03137 )
+shape = SubResource( 20 )
+
+[node name="purple2" type="Area2D" parent="Portal"]
+position = Vector2( 576, 512 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/purple2"]
+position = Vector2( 107.984, 0.929016 )
+frames = SubResource( 19 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/purple2"]
+position = Vector2( 108.648, 3.03137 )
+shape = SubResource( 20 )
+
+[node name="green1" type="Area2D" parent="Portal"]
+position = Vector2( 288, 712 )
+script = SubResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green1"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 24 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green1"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 25 )
+
+[node name="green2" type="Area2D" parent="Portal"]
+position = Vector2( 264, 1312 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green2"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 24 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green2"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 25 )
+
+[node name="green3" type="Area2D" parent="Portal"]
+position = Vector2( 224, 1144 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green3"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 24 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green3"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 25 )
+
+[node name="red1" type="Area2D" parent="Portal"]
+position = Vector2( 864, 448 )
+script = SubResource( 26 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red1"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 29 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red1"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 30 )
+
+[node name="red2" type="Area2D" parent="Portal"]
+position = Vector2( 1248, 1272 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red2"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 29 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red2"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 30 )
+
+[node name="red3" type="Area2D" parent="Portal"]
+position = Vector2( 1248, 840 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red3"]
+position = Vector2( -4.01596, 120.929 )
+frames = SubResource( 29 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red3"]
+position = Vector2( -3.35233, 123.031 )
+shape = SubResource( 30 )
+
+[node name="Button" type="Node" parent="."]
+
+[node name="Button" type="Sprite" parent="Button" groups=[
+"Buttons",
+]]
+position = Vector2( 160, 1248 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 31 )
+script = SubResource( 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Button/Button" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button/Area2D"]
+shape = SubResource( 33 )
+
+[node name="Label" type="Label" parent="Button/Button"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Button/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button/HitBox"]
+position = Vector2( 0.198608, 7.51351 )
+shape = SubResource( 34 )
+
+[node name="Button2" type="Sprite" parent="Button" groups=[
+"Buttons",
+]]
+position = Vector2( 1248, 1376 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 35 )
+script = SubResource( 36 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Button/Button2" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button2/Area2D"]
+shape = SubResource( 37 )
+
+[node name="Label" type="Label" parent="Button/Button2"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Button/Button2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button2/HitBox"]
+position = Vector2( 0.198608, 7.51351 )
+shape = SubResource( 38 )
+
+[node name="Button3" type="Sprite" parent="Button" groups=[
+"Buttons",
+]]
+position = Vector2( 1248, 736 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 39 )
+script = SubResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Button/Button3" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button3/Area2D"]
+shape = SubResource( 41 )
+
+[node name="Label" type="Label" parent="Button/Button3"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Button/Button3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button3/HitBox"]
+position = Vector2( 0.198608, 7.51351 )
+shape = SubResource( 42 )
+
+[node name="Button4" type="Sprite" parent="Button" groups=[
+"Buttons",
+]]
+position = Vector2( 416, 672 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 39 )
+script = SubResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="Button/Button4" groups=[
+"Buttons",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button4/Area2D"]
+shape = SubResource( 41 )
+
+[node name="Label" type="Label" parent="Button/Button4"]
+visible = false
+margin_left = -60.5203
+margin_top = -33.2321
+margin_right = 60.4797
+margin_bottom = -19.2321
+text = "Press E to  activate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="StaticBody2D" parent="Button/Button4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button4/HitBox"]
+position = Vector2( 0.198608, 7.51351 )
+shape = SubResource( 42 )
+
+[node name="Exit" type="Node" parent="."]
+
+[node name="Door" type="StaticBody2D" parent="Exit"]
+position = Vector2( 768, 80 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Exit/Door"]
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Exit/Door" groups=[
+"Level3_ExitDoor",
+]]
+
+[node name="EnterCollision" type="CollisionShape2D" parent="Exit/Door/Area2D"]
+position = Vector2( -0.349167, 12.6408 )
+shape = SubResource( 43 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit/Door"]
+position = Vector2( 0.0110321, -1.85605 )
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+shape = SubResource( 44 )
+
+[node name="Label" type="Label" parent="Exit"]
+visible = false
+margin_left = 44.1332
+margin_top = 977.285
+margin_right = 217.133
+margin_bottom = 1008.28
+text = "Press E to  activate"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_shape_entered" from="Portal/yellow1" to="Portal/yellow1" method="_on_yellow1_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/yellow2" to="Portal/yellow1" method="_on_yellow2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/purple1" to="Portal/purple1" method="_on_purple1_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/purple2" to="Portal/purple1" method="_on_purple2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/green1" to="Portal/green1" method="_on_green1_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/green2" to="Portal/green1" method="_on_green2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/green3" to="Portal/green1" method="_on_green3_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/red1" to="Portal/red1" method="_on_red1_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/red2" to="Portal/red1" method="_on_green5_body_shape_entered"]
+[connection signal="body_shape_entered" from="Portal/red3" to="Portal/red1" method="_on_green6_body_shape_entered"]
