@@ -14,4 +14,4 @@ func _process(delta):
 	else:
 		door_sprite.set_texture(door_unlock_text)
 		if Input.is_action_just_pressed("Interact") && in_door_range:
-			get_tree().change_scene("res://scenes/Level3.tscn")
+			get_tree().change_scene("res://scenes/Level2.tscn")
