@@ -7,6 +7,9 @@ var pos
 
 onready var rayCast = get_node("RayCast2D")
 
+onready var ctrl_z_Sound = get_node("Node/CtrlZ")
+onready var reset_Sound = get_node("Node2/Reset")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -60,9 +63,12 @@ func _process(delta):
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.flip_v = false
 	
-	if Input.is_action_pressed("Reset"):
+	if Input.is_action_just_pressed("Reset"):
 		$".".global_position = Vector2(pos.x, pos.y)
-	if Input.is_action_pressed("Restart"):
+		ctrl_z_Sound.play()
+	if Input.is_action_just_pressed("Restart"):
+		reset_Sound.play()
+		yield(get_tree().create_timer(1.2), "timeout")
 		get_tree().reload_current_scene()
 
 func _on_Player_body_entered(body):

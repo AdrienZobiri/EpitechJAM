@@ -2,6 +2,9 @@ extends Sprite
 
 var button_active_text = preload("res://assets/tileset/switch_on.png")
 var button_inactive_text = preload("res://assets/tileset/switch_off.png")
+
+onready var buttonSound = get_node("../../../ButtonSound")
+
 var is_button_active = false
 var in_button_range = false
 
@@ -12,4 +15,5 @@ func _physics_process(delta):
 	else:
 		set_texture(button_inactive_text)
 	if in_button_range && Input.is_action_just_pressed("Interact"):
+		buttonSound.play()
 		is_button_active = true

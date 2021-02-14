@@ -2,15 +2,19 @@ extends Area2D
 
 onready var button = get_node("../Buttons/Portals/Button")
 
+onready var PortalSound = get_node("../PortalSound")
+
 func _ready():
 	pass
 
 func _on_Portal_body_shape_entered(body_id, body, body_shape, local_shape):
+	PortalSound.play()
 	var player = Main.get("player")
 	player.global_position = get_parent().get_node("Portal2").global_position
 
 
 func _on_Portal2_body_shape_entered(body_id, body, body_shape, local_shape):
+	PortalSound.play()
 	var player = Main.get("player")
 	player.global_position = get_parent().get_node("Portal").global_position
 
