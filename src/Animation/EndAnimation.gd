@@ -7,6 +7,7 @@ var isDancing
 var timer
 var timerGood
 
+const creditsScene = preload("res://Scenes/Credits.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,3 +49,5 @@ func _process(delta):
 		timerGood = true
 		$MonkiFlip.visible = true
 		$MonkiFlip.play()
+	elif timerGood && !$MonkiFlip.is_playing():
+		get_tree().change_scene("res://scenes/Credits.tscn")

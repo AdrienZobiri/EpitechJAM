@@ -1,0 +1,850 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Credits/Credits.gd" type="Script" id=1]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 1 )
+speed = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1088.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3.5636, 19.5996 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Main Label" type="Label" parent="Sprite"]
+margin_left = 804.0
+margin_top = 1380.0
+margin_right = 964.0
+margin_bottom = 1394.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Citations" type="Label" parent="Sprite/Main Label"]
+margin_left = -0.436401
+margin_top = -295.6
+margin_right = 76.5636
+margin_bottom = -281.6
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Citations"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Citations"]
+margin_left = 40.0
+margin_top = 18.6667
+margin_right = 325.0
+margin_bottom = 49.6667
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "\"Celui qui avale une noix de coco,
+fais confiance à son anus\" - Proverbe africain"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Citations"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 291.0
+margin_bottom = 79.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "\"Plus on est de fous, moins il y a de riz\"
+- Coluche"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev5" type="Label" parent="Sprite/Main Label/Citations"]
+margin_left = 40.0
+margin_top = 77.3333
+margin_right = 216.0
+margin_bottom = 91.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "\"Le futur est mort en 2020\" - #COVID-19"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Developers" type="Label" parent="Sprite/Main Label"]
+margin_top = 0.000244141
+margin_right = 77.0
+margin_bottom = 14.0002
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Developers:"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Developers"]
+margin_left = 40.0
+margin_top = 21.3333
+margin_right = 134.0
+margin_bottom = 35.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Developers"]
+margin_left = 40.0
+margin_top = 34.6666
+margin_right = 129.0
+margin_bottom = 48.6666
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cyril Grosjean"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Developers"]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 184.0
+margin_bottom = 62.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jean Louis Deurveilher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev4" type="Label" parent="Sprite/Main Label/Developers"]
+margin_left = 40.0
+margin_top = 61.3333
+margin_right = 123.0
+margin_bottom = 75.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrien Zobiri"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev5" type="Label" parent="Sprite/Main Label/Developers"]
+margin_left = 40.0
+margin_top = 74.6666
+margin_right = 123.0
+margin_bottom = 88.6666
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lead Dev" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 336.0
+margin_right = 92.0
+margin_bottom = 350.0
+rect_scale = Vector2( 3, 3 )
+text = "Lead Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Lead Dev"]
+margin_left = 40.0
+margin_top = 21.3333
+margin_right = 134.0
+margin_bottom = 35.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Character dev" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 528.0
+margin_right = 122.0
+margin_bottom = 542.0
+rect_scale = Vector2( 3, 3 )
+text = "Character Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Character dev"]
+margin_left = 40.0
+margin_top = 21.3333
+margin_right = 134.0
+margin_bottom = 35.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cyril Grosjean"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 720.0
+margin_right = 130.0
+margin_bottom = 734.0
+rect_scale = Vector2( 3, 3 )
+text = "Map monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Map maker"]
+margin_left = 40.0
+margin_top = 21.3333
+margin_right = 133.0
+margin_bottom = 35.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Map maker"]
+margin_left = 40.0
+margin_top = 37.0
+margin_right = 123.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrien Zobiri"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="System dev" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 944.0
+margin_right = 122.0
+margin_bottom = 958.0
+rect_scale = Vector2( 3, 3 )
+text = "System monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/System dev"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 184.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jean Louis Deurveilher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound designer" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 1128.0
+margin_right = 122.0
+margin_bottom = 1142.0
+rect_scale = Vector2( 3, 3 )
+text = "Sound monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Sound designer"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 184.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hero" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 1296.0
+margin_right = 122.0
+margin_bottom = 1310.0
+rect_scale = Vector2( 3, 3 )
+text = "Heroe monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Hero"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexis the monkey"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trailer maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 1480.0
+margin_right = 122.0
+margin_bottom = 1494.0
+rect_scale = Vector2( 3, 3 )
+text = "Trailer monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Trailer maker"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 1688.0
+margin_right = 95.0
+margin_bottom = 1702.0
+rect_scale = Vector2( 3, 3 )
+text = "Story monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Story maker"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cyril Grosjean"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Citation maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 8.0
+margin_top = 1896.0
+margin_right = 112.0
+margin_bottom = 1910.0
+rect_scale = Vector2( 3, 3 )
+text = "Citation monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Citation maker"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juanito"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portal maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 2120.0
+margin_right = 108.0
+margin_bottom = 2134.0
+rect_scale = Vector2( 3, 3 )
+text = "Portal monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Portal maker"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphic advisor" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 2344.0
+margin_right = 171.0
+margin_bottom = 2358.0
+rect_scale = Vector2( 3, 3 )
+text = "Graphic Advisor Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Graphic advisor"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrien Zobiri"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphic vice advisor" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 2576.0
+margin_right = 202.0
+margin_bottom = 2590.0
+rect_scale = Vector2( 3, 3 )
+text = "Graphic Vice Advisor Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Graphic vice advisor"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite maker" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 2824.0
+margin_right = 202.0
+margin_bottom = 2838.0
+rect_scale = Vector2( 3, 3 )
+text = "Sprite Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Sprite maker"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 184.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jean Louis Deurveilher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Sprite maker"]
+margin_left = 40.0
+margin_top = 37.0
+margin_right = 123.0
+margin_bottom = 51.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrien Zobiri"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Sprite maker"]
+margin_left = 40.0
+margin_top = 53.3333
+margin_right = 123.0
+margin_bottom = 67.3333
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ride Wife Team" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 3144.0
+margin_right = 138.0
+margin_bottom = 3158.0
+rect_scale = Vector2( 3, 3 )
+text = "Ride Wife Monkeys"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Ride Wife Team"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Mathieu Barral"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Ride Wife Team"]
+margin_left = 40.0
+margin_top = 37.3334
+margin_right = 133.0
+margin_bottom = 51.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Adrien Zobiri"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Ride Wife Team"]
+margin_left = 40.0
+margin_top = 53.3334
+margin_right = 133.0
+margin_bottom = 67.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jean Louis Deurveilher"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev4" type="Label" parent="Sprite/Main Label/Ride Wife Team"]
+margin_left = 40.0
+margin_top = 69.3334
+margin_right = 184.0
+margin_bottom = 83.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev5" type="Label" parent="Sprite/Main Label/Ride Wife Team"]
+margin_left = 40.0
+margin_top = 85.3334
+margin_right = 184.0
+margin_bottom = 99.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cyril Grosjean"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Community Manager" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 3560.0
+margin_right = 202.0
+margin_bottom = 3574.0
+rect_scale = Vector2( 3, 3 )
+text = "Community Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Community Manager"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alexandre Juan"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Astronaute" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 3792.0
+margin_right = 202.0
+margin_bottom = 3806.0
+rect_scale = Vector2( 3, 3 )
+text = "Astronaut monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Astronaute"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Thomas Pesquet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Janitors" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 4048.0
+margin_right = 202.0
+margin_bottom = 4062.0
+rect_scale = Vector2( 3, 3 )
+text = "Janitors monkeys"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Janitors"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Jordan Aveline"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Janitors"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 131.0
+margin_bottom = 54.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Karim \"El Croco\" Dridi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Janitors"]
+margin_left = 40.0
+margin_top = 56.0
+margin_right = 179.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Léo Sar(d)ochar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev4" type="Label" parent="Sprite/Main Label/Janitors"]
+margin_left = 40.0
+margin_top = 72.0
+margin_right = 179.0
+margin_bottom = 86.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Roselyne Bachelot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev5" type="Label" parent="Sprite/Main Label/Janitors"]
+margin_left = 40.0
+margin_top = 88.0
+margin_right = 179.0
+margin_bottom = 102.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Yellow Vests"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Github creators" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 4504.0
+margin_right = 202.0
+margin_bottom = 4518.0
+rect_scale = Vector2( 3, 3 )
+text = "Github Monkeys"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Github creators"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Tom Preston-Werner"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Github creators"]
+margin_left = 40.0
+margin_top = 37.3334
+margin_right = 173.0
+margin_bottom = 51.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Scott Chacon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev3" type="Label" parent="Sprite/Main Label/Github creators"]
+margin_left = 40.0
+margin_top = 50.6667
+margin_right = 173.0
+margin_bottom = 64.6667
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Chris Wanstrath"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev4" type="Label" parent="Sprite/Main Label/Github creators"]
+margin_left = 40.0
+margin_top = 63.9999
+margin_right = 173.0
+margin_bottom = 77.9999
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "P. J. Hyett"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev5" type="Label" parent="Sprite/Main Label/Github creators"]
+margin_left = 41.1879
+margin_top = 78.7999
+margin_right = 174.188
+margin_bottom = 92.7999
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Corentin Petrau"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Godot creators" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 4872.0
+margin_right = 202.0
+margin_bottom = 4886.0
+rect_scale = Vector2( 3, 3 )
+text = "Godot Monkeys"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Godot creators"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Juan Linietsky"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dev2" type="Label" parent="Sprite/Main Label/Godot creators"]
+margin_left = 40.0
+margin_top = 37.3334
+margin_right = 173.0
+margin_bottom = 51.3334
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ariel Manzur"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moulinette" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0001
+margin_top = 5128.0
+margin_right = 202.0
+margin_bottom = 5142.0
+rect_scale = Vector2( 3, 3 )
+text = "Moulinette Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Moulinette"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Nao Marvin (Bastard :) )"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gaypride monkey" type="Label" parent="Sprite/Main Label"]
+margin_left = 16.0
+margin_top = 5336.0
+margin_right = 202.0
+margin_bottom = 5350.0
+rect_scale = Vector2( 3, 3 )
+text = "Gaypride Monkey"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="dev1" type="Label" parent="Sprite/Main Label/Gaypride monkey"]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Alejandro Juanito"
+__meta__ = {
+"_edit_use_anchors_": false
+}
