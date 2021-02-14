@@ -13,6 +13,7 @@ func _process(delta):
 			get_node("Area2D/EnterCollision").set_disabled(false)
 		door_sprite.set_texture(door_unlock_text)
 		if Input.is_action_just_pressed("Interact") && in_door_range:
+			$"/root/SoundMusic".stop()
 			get_tree().change_scene("res://scenes/EndAnimation.tscn")
 	else:
 		door_sprite.set_texture(door_lock_text)

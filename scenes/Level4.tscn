@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scenes/Map4.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Door_Level4_Exit.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://src/Buttons/Button3_level4.gd" type="Script" id=13]
 [ext_resource path="res://src/Buttons/Button4_level4.gd" type="Script" id=14]
 [ext_resource path="res://src/Portal/Red_Portal.gd" type="Script" id=15]
+[ext_resource path="res://assets/sound/sound_button.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sound/portal_sound.wav" type="AudioStream" id=17]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -79,16 +81,20 @@ height = 58.0684
 [sub_resource type="GDScript" id=15]
 script/source = "extends Area2D
 
+onready var portalSound = get_node(\"../../Node2/PortalSound\")
+
 func _ready():
 	pass
 
 func _on_purple1_body_shape_entered(body_id, body, body_shape, local_shape):
 	if body.is_in_group(\"Player\"):
+		portalSound.play()
 		var player = Main.get(\"player\")
 		player.global_position = get_parent().get_node(\"purple2\").global_position
 
 func _on_purple2_body_shape_entered(body_id, body, body_shape, local_shape):
 	if body.is_in_group(\"Player\"):
+		portalSound.play()
 		var player = Main.get(\"player\")
 		player.global_position = get_parent().get_node(\"purple1\").global_position
 "
@@ -118,21 +124,26 @@ height = 67.8496
 [sub_resource type="GDScript" id=20]
 script/source = "extends Area2D
 
+onready var portalSound = get_node(\"../../Node2/PortalSound\")
+
 func _ready():
 	pass
 
 func _on_green1_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group(\"Player\"):
+		portalSound.play()
 		var player = Main.get(\"player\")
 		player.global_position = get_parent().get_node(\"green2\").global_position
 
 func _on_green2_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group(\"Player\"):
+		portalSound.play()
 		var player = Main.get(\"player\")
 		player.global_position = get_parent().get_node(\"green1\").global_position
 
 func _on_green3_body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.is_in_group(\"Player\"):
+		portalSound.play()
 		var player = Main.get(\"player\")
 		player.global_position = get_parent().get_node(\"green2\").global_position
 "
@@ -289,6 +300,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/yellow1"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/yellow1"]
@@ -305,6 +317,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/yellow2"]
 position = Vector2( 216.91, -585.165 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
 offset = Vector2( -120.896, 579.776 )
 
@@ -323,7 +336,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/purple1"]
 position = Vector2( -100.016, 0.929016 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/purple1"]
@@ -340,7 +352,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/purple2"]
 position = Vector2( 107.984, 0.929016 )
 frames = SubResource( 18 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/purple2"]
@@ -357,6 +368,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green1"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green1"]
@@ -373,6 +385,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green2"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green2"]
@@ -389,6 +402,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/green3"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 23 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/green3"]
@@ -405,7 +419,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red1"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 27 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red1"]
@@ -422,7 +435,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red2"]
 position = Vector2( -4.01596, 120.929 )
 frames = SubResource( 27 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red2"]
@@ -438,7 +450,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Portal/red3"]
 position = Vector2( 83.1692, -0.0609741 )
 frames = SubResource( 27 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/red3"]
@@ -637,6 +648,17 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 779.15, 793.769 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 16 )
+volume_db = 15.489
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="PortalSound" type="AudioStreamPlayer" parent="Node2"]
+stream = ExtResource( 17 )
 [connection signal="body_shape_entered" from="Portal/yellow1" to="Portal/yellow1" method="_on_yellow1_body_shape_entered"]
 [connection signal="body_shape_entered" from="Portal/yellow2" to="Portal/yellow1" method="_on_yellow2_body_shape_entered"]
 [connection signal="body_shape_entered" from="Portal/purple1" to="Portal/purple1" method="_on_purple1_body_shape_entered"]

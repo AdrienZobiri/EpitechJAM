@@ -50,4 +50,5 @@ func _process(delta):
 		$MonkiFlip.visible = true
 		$MonkiFlip.play()
 	elif timerGood && !$MonkiFlip.is_playing():
+		$"/root/SoundMusic".play()
 		get_tree().change_scene("res://scenes/Credits.tscn")
