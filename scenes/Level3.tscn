@@ -158,6 +158,13 @@ height = 3.87718
 
 [node name="map" parent="." instance=ExtResource( 2 )]
 
+[node name="Jordan" type="Sprite" parent="."]
+visible = false
+position = Vector2( 767.058, 767.43 )
+scale = Vector2( 0.485318, 0.477674 )
+texture = ExtResource( 18 )
+script = ExtResource( 19 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 768, 704 )
 
@@ -899,13 +906,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Troll/Button/HitBox"]
 position = Vector2( 0.198608, 7.51351 )
 shape = SubResource( 28 )
-
-[node name="Jordan" type="Sprite" parent="."]
-visible = false
-position = Vector2( 767.058, 767.43 )
-scale = Vector2( 0.485318, 0.477674 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )

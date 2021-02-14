@@ -1,7 +1,8 @@
 extends Sprite
 
 onready var door = get_node("../../../Exit/Door")
-
+onready var purple1 = get_node("../../../Portal/purple1")
+onready var purple2 = get_node("../../../Portal/purple2")
 onready var buttonSound = get_node("../../../Node/ButtonSound")
 
 var button_active_text = preload("res://assets/tileset/switch_on.png")
@@ -17,3 +18,7 @@ func _physics_process(delta):
 		buttonSound.play()
 		is_button_active = true
 		door.is_open = true
+		purple1.get_node("AnimatedSprite").visible = false
+		purple1.get_node("CollisionShape2D").set_disabled(true)
+		purple2.get_node("AnimatedSprite").visible = false
+		purple2.get_node("CollisionShape2D").set_disabled(true)

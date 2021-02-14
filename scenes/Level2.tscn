@@ -180,7 +180,7 @@ shape = SubResource( 6 )
 [node name="Button" type="Sprite" parent="Buttons/Portals" groups=[
 "Buttons",
 ]]
-position = Vector2( 160, 928 )
+position = Vector2( 224, 864 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )

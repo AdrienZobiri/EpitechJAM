@@ -70,6 +70,8 @@ func _process(delta):
 		reset_Sound.play()
 		yield(get_tree().create_timer(1.2), "timeout")
 		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 func _on_Player_body_entered(body):
 	hide()
